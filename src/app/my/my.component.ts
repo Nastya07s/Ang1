@@ -7,13 +7,18 @@ import {Component} from '@angular/core';
 })
 export class MyComponent {
 
-  public al = 'left';
+  public cl = 'blue';
+  public addStatus = false;
 
   constructor() {
-    setTimeout(function() {
-      this.al = 'right';
-      console.log(this.al);
-    }, 5000);
+    setInterval(() => {
+      this.cl = (this.cl === 'blue') ? 'red' : 'blue';
+    }, 2000);
+  }
+
+  or() {
+    console.log('then');
+    this.addStatus = true;
   }
 
 }
